@@ -24,7 +24,7 @@ const ArticlePage = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {/* Liste des articles */}
-                {articles.map((article: any ) => (
+                {articles.map((article: TArticleWithTagsAndComments ) => (
                     <Link key={article.id} href={`/article/${article.id}`}>
                         <ArticleCard article={article} />
                     </Link>
