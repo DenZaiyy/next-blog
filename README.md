@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next Blog
 
-## Getting Started
+This is a exercice to learn [NextJS](https://nextjs.org/) with [Prisma](https://www.prisma.io/), [TailwindCSS](https://tailwindcss.com) and [MongoDB](https://www.mongodb.com/).
 
-First, run the development server:
+## Prisma
+
+To using prisma, we need to install it with :
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm i prisma @prisma/client
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+After installation, we need to generate the prisma client with:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npx prisma generate
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+And push changes to db:
 
-## Learn More
+```bash
+npx prisma db push
+```
 
-To learn more about Next.js, take a look at the following resources:
+Then we can use prisma to manage our database.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## MongoDB
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+I'm using [MongoDB Atlas](https://www.mongodb.com/fr-fr/atlas) to store data.
 
-## Deploy on Vercel
+I using [MongoDB Compass](https://www.mongodb.com/products/compass) to manage my database.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Packages
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+I'm using multiple packages to make my life easier.
+
+- [React Hot Toast](https://react-hot-toast.com/) to display notifications.
+- [Lucide](https://lucide.dev/) to display icons.
+- [Date-fns](https://date-fns.org/) to format dates.
