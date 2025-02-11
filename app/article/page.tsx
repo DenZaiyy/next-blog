@@ -1,5 +1,3 @@
-import ArticleCard from "@/components/ArticleCard";
-import Link from "next/link";
 import {fetchArticles} from "@/app/api/article/hooks/fetchArticles";
 import ArticleList from "@/components/ArticleList";
 
