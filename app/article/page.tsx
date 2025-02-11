@@ -1,35 +1,36 @@
-"use client";
-
-import {useEffect, useState} from "react";
 import ArticleCard from "@/components/ArticleCard";
 import Link from "next/link";
+import {fetchArticles} from "@/app/api/article/hooks/fetchArticles";
+import ArticleList from "@/components/ArticleList";
 
-const ArticlePage = () => {
+const ArticlePage = async () => {
 
-    const [articles, setArticles] = useState<TArticleWithTagsAndComments[]>([]);
+    const articles = await fetchArticles();
+
+    /*const [articles, setArticles] = useState<TArticleWithTagsAndComments[] | null >(null);
 
     useEffect(() => {
         const fetchArticles = async () => {
+            try {
+                const data = await fetchArticles();
+                setArticles(data);
+
+            } catch (err) {
+                console.log('[ARTICLES] ', err);
+            }
             const response = await fetch('/api/article');
             const data: TArticleWithTagsAndComments[] = await response.json();
             setArticles(data);
         }
 
         fetchArticles()
-    }, []);
+    }, []);*/
 
     return (
         <>
             <h1 className="text-4xl font-bold mb-6">Blog</h1>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {/* Liste des articles */}
-                {articles.map((article: TArticleWithTagsAndComments ) => (
-                    <Link key={article.id} href={`/article/${article.id}`}>
-                        <ArticleCard article={article} />
-                    </Link>
-                ))}
-            </div>
+            <ArticleList articles={articles} />
         </>
     );
 }
