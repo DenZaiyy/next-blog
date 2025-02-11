@@ -17,7 +17,7 @@ const Comment: React.FC<ICommentProps> = ({comment}) => {
                     cache: "no-store"
                 })
 
-                if (!res.ok) {
+                if (res.ok) {
                     toast.success('Comment deleted successfully');
                     setTimeout(() => {
                         window.location.reload();
